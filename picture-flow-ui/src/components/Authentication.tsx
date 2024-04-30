@@ -92,10 +92,11 @@ export default function Authentication() {
           password: values["password"],
         }),
       });
-      const authToken = await token.json();
-      if (token.statusText == "OK") {
-        login(authToken.AuthToken);
-        navigate("/main");
+      
+      if (token.ok) {
+        const authToken = await token.json();
+        login(authToken.AuthToken); // Ensure this function is implemented correctly and handles the authToken
+        navigate("/main"); 
       } else {
         forgotPassword.style.display = "block";
       }
