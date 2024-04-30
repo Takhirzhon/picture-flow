@@ -15,7 +15,7 @@ import Main_feed from "./routes/MainFeed";
 import PictureDetailsPage from "./routes/PictureDetailsRoute";
 import PrivacyPolicy from "./routes/PrivacyPolicyPage";
 import Profile from "./routes/profile";
-import Root from "./routes/profile";
+import Root from "./routes/root";
 import Search from "./routes/Search";
 
 const router = createBrowserRouter([
