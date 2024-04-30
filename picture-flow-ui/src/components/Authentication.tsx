@@ -92,11 +92,10 @@ export default function Authentication() {
           password: values["password"],
         }),
       });
-      
-      if (token.ok) {
-        const authToken = await token.json();
-        login(authToken.AuthToken); // Ensure this function is implemented correctly and handles the authToken
-        navigate("/main"); 
+      const authToken = await token.json();
+      if (token.statusText == "OK") {
+        login(authToken.AuthToken);
+        navigate("/main");
       } else {
         forgotPassword.style.display = "block";
       }
@@ -167,13 +166,13 @@ export default function Authentication() {
               <Link id="authentication-back-arrow-link" to="/">
                 <img
                   id="authentication-back-arrow"
-                  src="../../img/icon/back-arrow.png"
+                  src="./img/icon/back-arrow.png"
                 ></img>
               </Link>
             </div>
 
             <Header></Header>
-            <img id="authentication-header-image" src="../img/logo.png"></img>
+            <img id="authentication-header-image" src="img/logo.png"></img>
           </div>
           <div id="error"></div>
 
