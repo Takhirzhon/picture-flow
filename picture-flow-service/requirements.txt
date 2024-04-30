@@ -5,3 +5,4 @@ pexels-api
 pillow
 redis
 aioredis
+cachetools
