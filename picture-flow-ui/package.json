@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://picture-flow-u66i.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -44,9 +45,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "sas": "^3.0.4",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11",
-    "proxy": "https://picture-flow-u66i.onrender.com"
-
+    "vite": "^4.4.11"
   }
 }
 
