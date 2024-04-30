@@ -15,8 +15,7 @@ r = aioredis.from_url("redis://default:d9VRpwCIqwzvK2vUJFqy81qFAQaqifEp@redis-14
 app = FastAPI()
 
 origins = [
-    "https://picture-flow-six.vercel.app",
-    "https://picture-flow-u66i.onrender.com",
+    "https://picture-flow-six.vercel.app"
 ]
 
 app.add_middleware(
