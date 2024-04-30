@@ -84,7 +84,7 @@ export default function Authentication() {
     e.preventDefault();
 
     if (loginState == true) {
-      const token = await fetch("https://picture-flow-server.vercel.app/", {
+      const token = await fetch("http://0.0.0.0:10000/", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
@@ -100,7 +100,7 @@ export default function Authentication() {
         forgotPassword.style.display = "block";
       }
     } else {
-      const token = await fetch("https://picture-flow-server.vercel.app/", {
+      const token = await fetch("http://0.0.0.0:10000/", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
