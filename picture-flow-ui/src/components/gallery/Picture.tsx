@@ -26,7 +26,7 @@ export default function Picture({
     const getImage = async () => {
       const cookie = new Cookie();
       const auth = cookie.get("authorization");
-      const fetchURL = "http://localhost:8000/api/picture/" + inputID;
+      const fetchURL = "https://picture-flow-u66i.onrender.com/api/picture/" + inputID;
 
       try {
         const response = await fetch(fetchURL, {

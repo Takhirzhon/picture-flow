@@ -8,7 +8,7 @@ export default function deleteButton(props: { property: string }) {
   const token = cookie.get("authorization");
   const delete_pic = () => {
     const picture = document.getElementById("#" + id);
-    fetch(`http://localhost:8000/api/delpicture/${id}`, {
+    fetch(`https://picture-flow-u66i.onrender.com/api/delpicture/${id}`, {
       method: "DELETE",
       headers: {
         auth: token,

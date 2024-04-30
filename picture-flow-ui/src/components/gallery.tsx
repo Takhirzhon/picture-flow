@@ -17,7 +17,7 @@ export default function Gallery() {
     const auth = cookie.get("authorization");
 
     const result = await fetch(
-      "http://localhost:8000/api/pictures/getpicture?amount=10",
+      "https://picture-flow-u66i.onrender.com/api/pictures/getpicture?amount=10",
       {
         method: "GET",
         headers: {

@@ -51,7 +51,7 @@ export default function PictureDetails() {
     if (!authorization || !receivedAuthor) return;
 
     const getNameEmailID = () => {
-      return fetch("http://localhost:8000/api/getOwnUser", {
+      return fetch("https://picture-flow-u66i.onrender.com/api/getOwnUser", {
         method: "GET",
         headers: {
           auth: authorization,

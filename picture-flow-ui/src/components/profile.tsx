@@ -46,7 +46,7 @@ function Profile() {
       setFormData({ ...formData, name: authorname });
     }
     const getNameEmailID = () => {
-      return fetch("http://localhost:8000/api/getOwnUser", {
+      return fetch("https://picture-flow-u66i.onrender.com/api/getOwnUser", {
         method: "GET",
         headers: {
           auth: authorization,
@@ -140,7 +140,7 @@ function Profile() {
           requestBody.password = passwordValue;
         }
         if (Object.keys(requestBody).length > 0) {
-          const token = await fetch("http://localhost:8000/api/updateProfile", {
+          const token = await fetch("https://picture-flow-u66i.onrender.com/api/updateProfile", {
             method: "POST",
             headers: {
               auth: authorization,
@@ -173,7 +173,7 @@ function Profile() {
   const getPictures = async (id: number) => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/pictures/getpicturesofprofile/" + id,
+        "https://picture-flow-u66i.onrender.com/api/pictures/getpicturesofprofile/" + id,
         {
           method: "GET",
           headers: {
