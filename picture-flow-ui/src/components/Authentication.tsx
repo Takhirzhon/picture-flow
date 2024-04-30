@@ -102,10 +102,7 @@ export default function Authentication() {
     } else {
       const token = await fetch("https://picture-flow-u66i.onrender.com/auth/register", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
+        mode: "cors",
         body: JSON.stringify({
           email: values["email"],
           password: values["password"],
