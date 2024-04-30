@@ -3,3 +3,5 @@ pyjwt
 bcrypt
 pexels-api
 pillow
+redis
+aioredis
