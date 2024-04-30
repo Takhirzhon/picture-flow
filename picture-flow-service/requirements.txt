@@ -1,0 +1,5 @@
+fastapi[all]
+pyjwt
+bcrypt
+pexels-api
+pillow
