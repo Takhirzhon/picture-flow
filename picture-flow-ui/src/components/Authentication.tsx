@@ -174,7 +174,7 @@ export default function Authentication() {
               <Link id="authentication-back-arrow-link" to="/">
                 <img
                   id="authentication-back-arrow"
-                  src="./img/icon/back-arrow.png"
+                  src="../../img/icon/back_arrow.png"
                 ></img>
               </Link>
             </div>
