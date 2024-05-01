@@ -84,21 +84,29 @@ export default function Authentication() {
     e.preventDefault();
 
     if (loginState == true) {
-      const token = await fetch("https://picture-flow-u66i.onrender.com/auth/login", {
+      fetch("https://picture-flow-u66i.onrender.com/auth/login", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
           email: values["email"],
           password: values["password"],
         }),
-      });
-      const authToken = await token.json();
-      if (token.statusText == "OK") {
-        login(authToken.AuthToken);
-        navigate("/main");
-      } else {
-        forgotPassword.style.display = "block";
-      }
+      })
+        .then(token => {
+          if (token.ok) {
+            return token.json();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .then(authToken => {
+          login(authToken.AuthToken);
+          navigate("/main");
+        })
+        .catch(error => {
+          console.error('Error during login:', error);
+          forgotPassword.style.display = "block";
+        });
     } else {
       const token = await fetch("https://picture-flow-u66i.onrender.com/auth/register", {
         method: "POST",
