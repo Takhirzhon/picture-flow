@@ -180,7 +180,7 @@ export default function Authentication() {
             </div>
 
             <Header></Header>
-            <img id="authentication-header-image" src="img/logo.png"></img>
+            <img id="authentication-header-image" src="../img/logo.png"></img>
           </div>
           <div id="error"></div>
 
