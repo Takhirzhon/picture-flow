@@ -8,8 +8,10 @@ import aiofiles
 import os
 
 async def main():
-    r = aioredis.from_url("redis://default:d9VRpwCIqwzvK2vUJFqy81qFAQaqifEp@redis-14795.c302.asia-northeast1-1.gce.cloud.redislabs.com:14795", 
-                          decode_responses=True)
+    POOL = aioredis.ConnectionPool.from_url("redis://default:d9VRpwCIqwzvK2vUJFqy81qFAQaqifEp@redis-14795.c302.asia-northeast1-1.gce.cloud.redislabs.com:14795", 
+                      decode_responses=True)
+    r = aioredis.StrictRedis(connection_pool=POOL)
+    
     api_key = 'wxrEHmpY8ApoHm230f6qwcYRLGcIavIFzF45j7vl8GasfePaC8HgwovY'
     second_api_key = 'H2jk9uKnhRmL6WPwh89zBezWvr'
     api = API(api_key)

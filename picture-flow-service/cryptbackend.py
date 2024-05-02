@@ -9,8 +9,9 @@ from cachetools import TTLCache
 #It is not safe to store passwords as text, 
 #but only few people has access to it and soon after presenting 
 #I will remove database Redis Cloud account that's why I left it in plain text.
-r = aioredis.from_url("redis://default:d9VRpwCIqwzvK2vUJFqy81qFAQaqifEp@redis-14795.c302.asia-northeast1-1.gce.cloud.redislabs.com:14795", 
+POOL = aioredis.ConnectionPool.from_url("redis://default:d9VRpwCIqwzvK2vUJFqy81qFAQaqifEp@redis-14795.c302.asia-northeast1-1.gce.cloud.redislabs.com:14795", 
                       decode_responses=True)
+r = aioredis.StrictRedis(connection_pool=POOL)
 
 secret = "LAWDKAOSKDPOAWKasdka02ri1932ruijidosd098awuqr"
 token_cache = TTLCache(maxsize=1024, ttl=300)
